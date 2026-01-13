@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aakash Jain, CFA | Analytics Program Manager</title>
+    <meta name="description" content="Chartered Financial Analyst and Analytics Program Manager with expertise in AI transformation, cross-functional program delivery, and data-driven decision-making.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy-deep: #0A2540;
+            --navy-mid: #1A3A5C;
+            --gold: #C9A227;
+            --gold-light: #E8D089;
+            --cream: #FAF8F5;
+            --slate: #64748B;
+            --text-primary: #1E293B;
+            --text-secondary: #475569;
+            --white: #FFFFFF;
+            --shadow-sm: 0 1px 2px rgba(10, 37, 64, 0.05);
+            --shadow-md: 0 4px 12px rgba(10, 37, 64, 0.08);
+            --shadow-lg: 0 12px 40px rgba(10, 37, 64, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--cream);
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(10, 37, 64, 0.06);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .nav.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy-deep);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-brand .cfa-badge {
+            font-size: 0.65rem;
+            background: var(--gold);
+            color: var(--navy-deep);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--navy-deep);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.2s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--navy-deep);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--navy-mid);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, var(--gold) 0%, #D4AF37 100%);
+            color: var(--navy-deep);
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(201, 162, 39, 0.35);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--navy-deep);
+            border: 2px solid var(--navy-deep);
+        }
+
+        .btn-outline:hover {
+            background: var(--navy-deep);
+            color: var(--white);
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy-deep);
+            border-radius: 2px;
+            transition: 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 24px 80px;
+            background: 
+                linear-gradient(135deg, rgba(250, 248, 245, 0.97) 0%, rgba(250, 248, 245, 0.85) 100%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230A2540' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(201, 162, 39, 0.15);
+            color: #8B7315;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            font-weight: 700;
+            color: var(--navy-deep);
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 36px;
+            max-width: 520px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.8s 0.2s ease forwards;
+            opacity: 0;
+        }
+
+        .hero-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 48px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--navy-deep) 0%, var(--gold) 100%);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: var(--navy-deep);
+            line-height: 1.1;
+        }
+
+        .stat-value span {
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--slate);
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        /* Contact bar */
+        .contact-bar {
+            display: flex;
+            gap: 24px;
+            margin-top: 36px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(10, 37, 64, 0.1);
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .contact-item:hover {
+            color: var(--navy-deep);
+        }
+
+        .contact-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--cream);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        /* Section styles */
+        .section {
+            padding: 100px 24px;
+        }
+
+        .section-alt {
+            background: var(--white);
+        }
+
+        .section-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-title {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--navy-deep);
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Profile Section */
+        .profile-text {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--gold);
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--gold) 0%, var(--navy-deep) 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 48px;
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background: var(--white);
+            border: 3px solid var(--gold);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .timeline-role {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--navy-deep);
+        }
+
+        .timeline-company {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-top: 4px;
+        }
+
+        .timeline-date {
+            background: var(--cream);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--slate);
+            white-space: nowrap;
+        }
+
+        .timeline-company-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(10, 37, 64, 0.06);
+        }
+
+        .timeline-points {
+            list-style: none;
+        }
+
+        .timeline-points li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .timeline-points li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .skill-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-top-color: var(--gold);
+        }
+
+        .skill-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--cream) 0%, rgba(201, 162, 39, 0.1) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.25rem;
+            color: var(--navy-deep);
+            margin-bottom: 16px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 8px 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(10, 37, 64, 0.04);
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .education-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--navy-deep) 0%, var(--gold) 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .education-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .education-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .education-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin: 0 auto 20px;
+        }
+
+        .education-card h3 {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--navy-deep);
+            margin-bottom: 8px;
+        }
+
+        .education-institution {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .education-year {
+            color: var(--slate);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--navy-deep);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact-section .section-title {
+            color: var(--white);
+        }
+
+        .contact-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .contact-method {
+            text-align: center;
+        }
+
+        .contact-method-icon {
+            width: 72px;
+            height: 72px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin: 0 auto 16px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover .contact-method-icon {
+            background: var(--gold);
+            transform: scale(1.1);
+        }
+
+        .contact-method h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-method a,
+        .contact-method p {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .contact-method a:hover {
+            color: var(--gold);
+        }
+
+        .download-cta {
+            padding-top: 48px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .download-cta p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Footer */
+        .footer {
+            background: #06192C;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .hero-card {
+                padding: 32px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 24px;
+                gap: 16px;
+                box-shadow: var(--shadow-lg);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .timeline {
+                padding-left: 24px;
+            }
+
+            .timeline::before {
+                left: 3px;
+            }
+
+            .timeline-item::before {
+                left: -24px;
+                width: 12px;
+                height: 12px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 100px 16px 60px;
+            }
+
+            .section {
+                padding: 60px 16px;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .stat-value {
+                font-size: 2.25rem;
+            }
+
+            .timeline-header {
+                flex-direction: column;
+            }
+
+            .timeline-card {
+                padding: 24px;
+            }
+
+            .contact-bar {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                justify-content: center;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .nav,
+            .hero-buttons,
+            .download-cta {
+                display: none;
+            }
+
+            body {
+                background: white;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">
+                Aakash Jain <span class="cfa-badge">CFA</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="Mr.-Aakash-Jain,-CFA-CV.pdf" download class="btn btn-download">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download CV
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-tag">📍 Mumbai, India</span>
+                <h1>Analytics Program Manager & <span>CFA Charterholder</span></h1>
+                <p class="hero-description">
+                    Over 4 years of experience driving AI transformation, cross-functional program delivery, and data-driven decision-making in global financial services at MSCI Inc.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#experience" class="btn btn-primary">View Experience</a>
+                    <a href="Mr.-Aakash-Jain,-CFA-CV.pdf" download class="btn btn-download">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-value">4<span>+</span></div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">$1.4<span>M</span></div>
+                            <div class="stat-label">Revenue Secured</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">100<span>%</span></div>
+                            <div class="stat-label">AI Goal Adoption</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">10<span>+</span></div>
+                            <div class="stat-label">Teams Aligned</div>
+                        </div>
+                    </div>
+                    <div class="contact-bar">
+                        <a href="mailto:aakashdjain@icloud.com" class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <span>aakashdjain@icloud.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/aakashdjain" target="_blank" rel="noopener" class="contact-item">
+                            <div class="contact-icon">💼</div>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Profile Section -->
+    <section class="section section-alt" id="about">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Professional Profile</h2>
+                <p class="section-subtitle">Bridging business strategy with technical execution</p>
+            </div>
+            <p class="profile-text">
+                Chartered Financial Analyst (CFA) and Analytics Program Manager with over 4 years of experience driving AI transformation, cross-functional program delivery, and data-driven decision-making in global financial services. Proven track record of leading enterprise-wide initiatives, securing multi-million-dollar client wins, and enabling adoption of next-generation analytics platforms. Adept at bridging business strategy with technical execution to deliver measurable results, optimize processes, and enhance stakeholder engagement.
+            </p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-subtitle">Building expertise across analytics, product management, and financial services</p>
+            </div>
+            
+            <div class="timeline">
+                <!-- MSCI - Analytics Program Manager -->
+                <div class="timeline-item visible">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-role">Analytics Program Manager – Product</div>
+                                <div class="timeline-company">MSCI Inc.</div>
+                            </div>
+                            <span class="timeline-date">Feb 2025 – Present</span>
+                        </div>
+                        <p class="timeline-company-desc">
+                            MSCI Inc. is a leading provider of critical decision support tools and services for the global investment community, including indexes, ESG research, analytics, and real estate benchmarks.
+                        </p>
+                        <ul class="timeline-points">
+                            <li>Lead AI goal alignment across 10 Analytics teams, achieving 100% adoption of measurable goals and delivering monthly progress reviews that accelerated MSCI's AI-first adoption strategy</li>
+                            <li>Orchestrated cross-functional deployment of Barra on Google Cloud Platform (GCP), completing regression, UI, and BDT testing ahead of deadlines, ensuring seamless production readiness</li>
+                            <li>Spearhead Project Management of decommissioning legacy Simulation and Risk Visualization components to improve platform experience and reduce maintenance overhead</li>
+                            <li>Process Improvement of Analytics release notes by collaborating with Client Service and Coverage teams, identifying gaps, and improving templates for better stakeholder awareness</li>
+                            <li>Provide strategic and operational support to Analytics leadership on planning, performance tracking, and team-wide initiatives</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- MSCI - Global RFP Analyst -->
+                <div class="timeline-item visible">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-role">Global RFP Analyst – Global Coverage</div>
+                                <div class="timeline-company">MSCI Inc.</div>
+                            </div>
+                            <span class="timeline-date">May 2023 – Feb 2025</span>
+                        </div>
+                        <ul class="timeline-points">
+                            <li>Contributed as a vital member of the RFP team, serving as a liaison between product development and sales departments across ESG, index, analytics, and real estate products</li>
+                            <li>Facilitated successful acquisition of a contract with a prominent American company with AUM exceeding USD 1.2 trillion for equity index within set timelines and guidelines</li>
+                            <li>Secured a contract with a leading bank with revenue inflow of $1.4 million USD</li>
+                            <li>Collaborated with cross-functional teams comprising research, product, and sales to drive revenue generation initiatives</li>
+                            <li>Collaborated on AI initiative to fetch and enhance client-facing responses from the directory</li>
+                            <li>Crafted compelling RFP responses tailored to client requirements, ensuring accuracy, clarity, and alignment with organizational objectives</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Morningstar -->
+                <div class="timeline-item visible">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-role">Corporate Events Analyst – Index Management</div>
+                                <div class="timeline-company">Morningstar Inc.</div>
+                            </div>
+                            <span class="timeline-date">Aug 2021 – May 2023</span>
+                        </div>
+                        <p class="timeline-company-desc">
+                            Morningstar, Inc. is a global financial services firm providing independent investment research, data, and tools for investors including comprehensive data on investment products and portfolio management services.
+                        </p>
+                        <ul class="timeline-points">
+                            <li>Spearheaded management of corporate event data (spin-offs, mergers, acquisitions, rights offerings, dividends, stock splits) ensuring timely and accurate portfolio-level information dissemination</li>
+                            <li>Applied advanced data analysis techniques to assess the impact of corporate events on investment portfolios and financial markets</li>
+                            <li>Conducted comprehensive research and root cause analysis to resolve discrepancies in corporate event data sets due to FX conversion factors, holiday calendar mismatches, and multi-exchange listings</li>
+                            <li>Produced detailed reports and dynamic presentations elucidating implications of corporate events on client portfolios and investment strategies</li>
+                            <li>Orchestrated seamless collaboration across multifunctional teams optimizing processes for USA and EMEA regions</li>
+                            <li><strong>Recognized for delivery excellence, receiving two awards for outstanding performance</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section section-alt" id="skills">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Core Competencies</h2>
+                <p class="section-subtitle">Technical skills and domain expertise</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <h3>Program Management</h3>
+                    <ul class="skill-list">
+                        <li>Cross-functional Team Leadership</li>
+                        <li>AI Goal Alignment & Adoption</li>
+                        <li>Product Lifecycle Management</li>
+                        <li>Stakeholder Engagement</li>
+                        <li>Process Improvement</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🎯</div>
+                    <h3>Analytics & Data</h3>
+                    <ul class="skill-list">
+                        <li>Data-Driven Decision Making</li>
+                        <li>Corporate Event Analysis</li>
+                        <li>Root Cause Analysis</li>
+                        <li>Performance Tracking</li>
+                        <li>SQL Querying</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">💼</div>
+                    <h3>Financial Services</h3>
+                    <ul class="skill-list">
+                        <li>ESG Research & Products</li>
+                        <li>Index Management</li>
+                        <li>Real Estate Analytics</li>
+                        <li>Portfolio Analysis</li>
+                        <li>RFP Response Management</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🛠️</div>
+                    <h3>Technical Tools</h3>
+                    <ul class="skill-list">
+                        <li>Microsoft Excel & Word</li>
+                        <li>Jira & Confluence</li>
+                        <li>SQL (Sequential Query Language)</li>
+                        <li>Google Cloud Platform</li>
+                        <li>Barra Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section" id="education">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Education & Qualifications</h2>
+                <p class="section-subtitle">Academic foundation and professional certifications</p>
+            </div>
+            
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-icon">🏆</div>
+                    <h3>Chartered Financial Analyst (CFA)</h3>
+                    <div class="education-institution">CFA Institute</div>
+                    <div class="education-year">2022 – 2024</div>
+                </div>
+
+                <div class="education-card">
+                    <div class="education-icon">🎓</div>
+                    <h3>Post-Graduate Diploma – Finance</h3>
+                    <div class="education-institution">Thakur Global Business School</div>
+                    <div class="education-year">2020 – 2022</div>
+                </div>
+
+                <div class="education-card">
+                    <div class="education-icon">📚</div>
+                    <h3>Bachelor's Degree – Finance</h3>
+                    <div class="education-institution">Thakur College of Science and Commerce</div>
+                    <div class="education-year">2017 – 2020</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Open to discussing new opportunities and collaborations</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-method">
+                    <div class="contact-method-icon">✉️</div>
+                    <h4>Email</h4>
+                    <a href="mailto:aakashdjain@icloud.com">aakashdjain@icloud.com</a>
+                </div>
+                <div class="contact-method">
+                    <div class="contact-method-icon">📱</div>
+                    <h4>Phone</h4>
+                    <p>+91-8898979439</p>
+                </div>
+                <div class="contact-method">
+                    <div class="contact-method-icon">💼</div>
+                    <h4>LinkedIn</h4>
+                    <a href="https://www.linkedin.com/in/aakashdjain" target="_blank" rel="noopener">linkedin.com/in/aakashdjain</a>
+                </div>
+            </div>
+
+            <div class="download-cta">
+                <p>Want a copy of my resume? Download the full PDF version below.</p>
+                <a href="Mr.-Aakash-Jain,-CFA-CV.pdf" download class="btn btn-download">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Download Resume (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Aakash Jain, CFA. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for timeline animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
